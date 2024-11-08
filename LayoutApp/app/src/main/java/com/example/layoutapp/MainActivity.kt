@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
         val btnEnviar = findViewById<Button>(R.id.btnEnviar)
 
 
-        layout.setBackgroundColor(Color.parseColor("#F0F4F8"))
         btnEnviar.setBackgroundColor(Color.parseColor("#2196F3"))
 
 
