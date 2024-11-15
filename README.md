@@ -18,4 +18,6 @@ Repositório dedicado a disciplina de **Desenvolvimento de Software para Disposi
 
 [![curso 2](https://img.shields.io/badge/kotlin2-curso-171515?style=for-the-badge&logo=kotlin&logoColor=white)](https://www.youtube.com/watch?v=XVeaEgRX7H0&list=PLizN3WA8HR1y-gzHM7kTQTlyS0GLUXO8a)
 
+### Documentação
 
+ - [Kotlin](https://kotlinlang.org/docs/getting-started.html)
