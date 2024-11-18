@@ -48,6 +48,14 @@
         android:layout_gravity="center_horizontal"
         android:paddingTop="10dp" />
 
+    <TextView
+        android:id="@+id/experienceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/profile_experience"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:paddingTop="18dp" />
     <!-- Experiências -->
     <ExpandableListView
         android:id="@+id/experienceExpandableList"

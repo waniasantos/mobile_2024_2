@@ -4,8 +4,8 @@
     <string name="profile_description">Especialista em criar apps incríveis com Kotlin, focado em UX. Fora do código, adora sonecas e observar pássaros.</string>
     <string name="current_job">Emprego Atual: Desenvolvedor Mobile</string>
     <string name="toast_message">Foto de perfil de Maxwell</string>
+    <string name="profile_experience">Experiências anteriores</string>>
 
-    <!-- Experiências -->
     <string-array name="experience_titles">
         <item>Estagiário - Empresa Cat</item>
         <item>Desenvolvedor Júnior - Empresa Patas</item>

@@ -17,13 +17,14 @@ class MainActivity : AppCompatActivity() {
         val nameText = findViewById<TextView>(R.id.nameText)
         val descriptionText = findViewById<TextView>(R.id.descriptionText)
         val currentJobText = findViewById<TextView>(R.id.currentJobText)
+        val experienceText = findViewById<TextView>(R.id.experienceText)
         val experienceExpandableList = findViewById<ExpandableListView>(R.id.experienceExpandableList)
 
         nameText.text = getString(R.string.profile_name)
         descriptionText.text = getString(R.string.profile_description)
         currentJobText.text = getString(R.string.current_job)
+        experienceText.text = getString(R.string.profile_experience)
 
-        // Dados para a lista sanfonada
         val experienceTitles = resources.getStringArray(R.array.experience_titles).toList()
         val experienceDetails = listOf(
             getString(R.string.experience_1_details),
