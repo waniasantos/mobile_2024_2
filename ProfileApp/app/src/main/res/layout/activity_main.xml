@@ -1,0 +1,58 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Foto de Perfil -->
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/maxwell"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/toast_message"
+        android:background="@drawable/rounded_image"
+        android:clipToOutline="true" />
+
+    <!-- Nome -->
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/profile_name"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="8dp" />
+
+    <!-- Emprego Atual -->
+    <TextView
+        android:id="@+id/currentJobText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/current_job"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:paddingTop="2dp" />
+
+    <!-- Descrição -->
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/profile_description"
+        android:textSize="16sp"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="10dp" />
+
+    <!-- Experiências -->
+    <ExpandableListView
+        android:id="@+id/experienceExpandableList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="2dp"
+        android:paddingTop="16dp" />
+</LinearLayout>

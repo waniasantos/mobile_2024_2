@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">ProfileApp</string>
+    <string name="profile_name">Maxwell</string>
+    <string name="profile_description">Especialista em criar apps incríveis com Kotlin, focado em UX. Fora do código, adora sonecas e observar pássaros.</string>
+    <string name="current_job">Emprego Atual: Desenvolvedor Mobile</string>
+    <string name="toast_message">Foto de perfil de Maxwell</string>
+
+    <!-- Experiências -->
+    <string-array name="experience_titles">
+        <item>Estagiário - Empresa Cat</item>
+        <item>Desenvolvedor Júnior - Empresa Patas</item>
+        <item>Desenvolvedor Web - Empresa Bigodes</item>
+        <item>Desenvolvedor Mobile - Freelancer para Empresa Sachê</item>
+    </string-array>
+
+    <string name="experience_1_details">Responsável por desenvolver pequenos módulos em um sistema de gestão de pets.</string>
+    <string name="experience_2_details">Aprimorou habilidades front-end e back-end em projetos mobile e web.</string>
+    <string name="experience_3_details">Criou sistemas inovadores para gerenciar recursos em tempo real.</string>
+    <string name="experience_4_details">Freelancer com foco em aplicativos de saúde.</string>
+
+
+</resources>
+
