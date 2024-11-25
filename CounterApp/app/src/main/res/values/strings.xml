@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">CounterApp</string>
+
+    <!-- Result -->
+    <string name="result_text">Resultado: %.2f</string>
+    <string name="input_hint">Digite um número</string>
+
+    <!-- Buttons -->
+    <string name="increment">Incrementar</string>
+    <string name="decrement">Decrementar</string>
+    <string name="add">Somar</string>
+    <string name="subtract">Subtrair</string>
+    <string name="multiply">Multiplicar</string>
+    <string name="divide">Dividir</string>
+    <string name="power">Potência</string>
+    <string name="sqrt">Raiz Quadrada</string>
+    <string name="modulo">Módulo</string>
+    <string name="clear">Limpar</string>
+</resources>
