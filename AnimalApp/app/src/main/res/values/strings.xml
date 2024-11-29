@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AnimalApp</string>
+    <string name="main_activity_label">AnimalApp</string>
+    <string name="animal_screen_label">Detalhes do Animal</string>
+    <string name="video_player_label">Reprodutor de Vídeo</string>
+    <string name="home_screen_text">Selecione um dos pets da Wania Santos.</string>
+    <string name="menu_doguinha">Doguinha - Cláudia</string>
+    <string name="menu_catinha">Catinha - Panda</string>
+    <string name="button_play_sound">Reproduzir Som</string>
+    <string name="button_play_video">Reproduzir Vídeo</string>
+    <string name="button_back_to_home">Voltar para Tela Inicial</string>
+    <string name="menu_content_description">Menu</string>
+</resources>
