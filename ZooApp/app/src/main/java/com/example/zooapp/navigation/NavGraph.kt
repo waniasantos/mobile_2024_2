@@ -37,7 +37,6 @@ fun NavGraph() {
     }
 }
 
-// Objeto Screen dentro do mesmo arquivo
 sealed class Screen(val route: String) {
     object Home : Screen("home")
     object Animal : Screen("animal/{animalName}") {

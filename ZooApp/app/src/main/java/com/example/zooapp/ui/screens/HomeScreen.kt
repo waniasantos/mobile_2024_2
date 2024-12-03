@@ -24,7 +24,6 @@ fun HomeScreen(onAnimalSelected: (Animal) -> Unit) {
     }
 
     Column {
-        // Barra de busca estilizada
         SearchBar(
             searchQuery = searchQuery,
             onSearchQueryChanged = { searchQuery = it },
@@ -80,7 +79,7 @@ fun SearchBar(
             .fillMaxWidth()
             .padding(8.dp)
             .height(56.dp),
-        shape = RoundedCornerShape(28.dp), // Estilo arredondado
+        shape = RoundedCornerShape(28.dp), 
         colors = TextFieldDefaults.textFieldColors(
             containerColor = colorResource(id = R.color.blue_paws_desaturated),
             focusedTextColor = colorResource(id = R.color.black_desatureted),

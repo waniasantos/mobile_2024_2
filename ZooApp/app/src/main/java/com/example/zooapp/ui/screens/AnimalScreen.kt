@@ -30,21 +30,21 @@ fun AnimalScreen(animal: Animal, navController: NavController) {
                             .fillMaxWidth()
                             .padding(end = 36.dp),
                         textAlign = TextAlign.Center,
-                        style = MaterialTheme.typography.titleLarge.copy(fontSize = 24.sp), // Tamanho maior
-                        color = colorResource(id = R.color.blue_paws) // Cor do texto
+                        style = MaterialTheme.typography.titleLarge.copy(fontSize = 24.sp), 
+                        color = colorResource(id = R.color.blue_paws) 
                     )
                 },
                 navigationIcon = {
-                    IconButton(onClick = { navController.popBackStack() }) { // Retorna à tela anterior
+                    IconButton(onClick = { navController.popBackStack() }) { 
                         Icon(
-                            painter = painterResource(id = R.drawable.seta_voltar), // Ícone da pasta drawable
+                            painter = painterResource(id = R.drawable.seta_voltar), 
                             contentDescription = "Voltar",
-                            tint = colorResource(id = R.color.blue_paws) // Cor do ícone
+                            tint = colorResource(id = R.color.blue_paws) 
                         )
                     }
                 },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    containerColor = colorResource(id = R.color.white) // Fundo da AppBar
+                    containerColor = colorResource(id = R.color.white) 
                 )
             )
         }
