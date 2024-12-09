@@ -40,7 +40,6 @@ fun HomeScreen(
         }
     ) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)) {
-            // Barra de busca arredondada
             TextField(
                 value = searchQuery,
                 onValueChange = { searchQuery = it },
@@ -48,11 +47,13 @@ fun HomeScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp)
-                    .height(56.dp), // Altura da barra de busca
-                shape = RoundedCornerShape(28.dp), // Define bordas arredondadas
+                    .height(56.dp),
+                shape = RoundedCornerShape(28.dp),
                 colors = TextFieldDefaults.colors(
-                    focusedIndicatorColor = Color.Transparent, // Sem indicador ao focar
-                    unfocusedIndicatorColor = Color.Transparent  // Sem indicador sem foco
+                    focusedContainerColor = MaterialTheme.colorScheme.inversePrimary,
+                    unfocusedContainerColor = MaterialTheme.colorScheme.inversePrimary,
+                    focusedIndicatorColor = Color.Transparent,
+                    unfocusedIndicatorColor = Color.Transparent
                 )
             )
 

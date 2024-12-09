@@ -1,9 +1,6 @@
 package com.example.bestiaryapp.ui.components
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MoreVert
@@ -11,12 +8,10 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.example.bestiaryapp.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -26,17 +21,15 @@ fun TopAppBarMenu(
 ) {
     val expanded = remember { mutableStateOf(false) }
 
-    TopAppBar(
+    CenterAlignedTopAppBar(
         title = {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(
-                    text = "Bestiário",
-                    style = MaterialTheme.typography.titleLarge,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    modifier = Modifier.fillMaxWidth()
-                )
-            }
+            Text(
+                text = "Bestiário",
+                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                color = MaterialTheme.colorScheme.primary
+            )
         },
         actions = {
             IconButton(onClick = { expanded.value = true }) {
@@ -48,6 +41,7 @@ fun TopAppBarMenu(
             DropdownMenu(
                 expanded = expanded.value,
                 onDismissRequest = { expanded.value = false }
+
             ) {
                 DropdownMenuItem(
                     text = { Text("Configurações") },
@@ -65,10 +59,9 @@ fun TopAppBarMenu(
                 )
             }
         },
-        colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = MaterialTheme.colorScheme.primary,
-            titleContentColor = MaterialTheme.colorScheme.onPrimary,
-            actionIconContentColor = MaterialTheme.colorScheme.onPrimary
+        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+            containerColor = MaterialTheme.colorScheme.background,
+            titleContentColor = MaterialTheme.colorScheme.primary
         )
     )
 }

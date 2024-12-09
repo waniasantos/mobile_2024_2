@@ -40,15 +40,13 @@ fun DetailsScreen(besty: Besty) {
         },
         containerColor = MaterialTheme.colorScheme.background
     ) { paddingValues ->
-        // Adiciona rolagem vertical
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .verticalScroll(rememberScrollState()) // Permite rolagem
+                .verticalScroll(rememberScrollState())
                 .padding(16.dp)
         ) {
-            // Imagem
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -63,7 +61,6 @@ fun DetailsScreen(besty: Besty) {
             }
             Spacer(modifier = Modifier.height(8.dp))
 
-            // Card de Informações Gerais
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(16.dp),
@@ -97,7 +94,6 @@ fun DetailsScreen(besty: Besty) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Card de Descrição
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(16.dp),

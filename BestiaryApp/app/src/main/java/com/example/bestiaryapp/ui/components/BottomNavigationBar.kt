@@ -23,8 +23,8 @@ fun BottomNavigationBar(navController: NavController) {
     val currentDestination = navController.currentBackStackEntryAsState().value?.destination
 
     NavigationBar(
-        containerColor = MaterialTheme.colorScheme.surfaceVariant, // Cor de fundo da barra
-        contentColor = MaterialTheme.colorScheme.onSurface  // Cor padrão para ícones e texto
+        containerColor = MaterialTheme.colorScheme.surfaceVariant,
+        contentColor = MaterialTheme.colorScheme.primary
     ) {
         screens.forEach { screen ->
             NavigationBarItem(
@@ -40,13 +40,13 @@ fun BottomNavigationBar(navController: NavController) {
                 label = { Text(screen.label) },
                 colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = MaterialTheme.colorScheme.primary,
-                    unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant
+                    unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                    indicatorColor = MaterialTheme.colorScheme.inversePrimary
                 )
             )
         }
     }
 }
-
 
 sealed class BottomBarScreen(val route: String, val icon: @Composable () -> Unit, val label: String) {
 
