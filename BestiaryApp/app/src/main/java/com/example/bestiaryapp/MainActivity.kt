@@ -8,19 +8,17 @@ import com.example.bestiaryapp.navigation.NavGraph
 
 @ExperimentalMaterial3Api
 class MainActivity : ComponentActivity() {
-   override fun onCreate(savedInstanceState: Bundle?) {
-       super.onCreate(savedInstanceState)
-       setContent {
-           NavGraph(
-               onSettingsClick = {
-                   // Ação para Configurações
-               },
-               onHelpClick = {
-                   // Ação para Ajuda
-               }
-           )
-       }
-   }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            NavGraph(
+                onSettingsClick = {
+                    // Ação para Configurações
+                },
+                onHelpClick = {
+                    // Ação para Ajuda
+                }
+            )
+        }
+    }
 }
-
-

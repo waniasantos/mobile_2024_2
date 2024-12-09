@@ -51,7 +51,7 @@ fun BestyListItem(
                         color = MaterialTheme.colorScheme.primary
                     )
                     Text(
-                        text = "Elemento: ${besty.elements}",
+                        text = "Elemento(s): ${besty.elements}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -71,7 +71,7 @@ fun BestyListItem(
                 text = besty.description,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
-                textAlign = TextAlign.Justify
+                textAlign = TextAlign.Left
             )
 
             Spacer(modifier = Modifier.height(8.dp))

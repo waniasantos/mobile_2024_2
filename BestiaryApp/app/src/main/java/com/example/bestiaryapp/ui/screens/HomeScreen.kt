@@ -3,12 +3,15 @@ package com.example.bestiaryapp.ui.screens
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.bestiaryapp.models.Besty
 import com.example.bestiaryapp.ui.components.BestyListItem
@@ -37,13 +40,20 @@ fun HomeScreen(
         }
     ) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)) {
+            // Barra de busca arredondada
             TextField(
                 value = searchQuery,
                 onValueChange = { searchQuery = it },
-                label = { Text("Pesquisar") },
+                label = { Text("Pesquisar criatura") },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp)
+                    .height(56.dp), // Altura da barra de busca
+                shape = RoundedCornerShape(28.dp), // Define bordas arredondadas
+                colors = TextFieldDefaults.colors(
+                    focusedIndicatorColor = Color.Transparent, // Sem indicador ao focar
+                    unfocusedIndicatorColor = Color.Transparent  // Sem indicador sem foco
+                )
             )
 
             LazyColumn(

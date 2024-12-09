@@ -2,13 +2,18 @@ package com.example.bestiaryapp.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.bestiaryapp.models.Besty
@@ -23,24 +28,27 @@ fun DetailsScreen(besty: Besty) {
                 title = {
                     Text(
                         text = besty.name,
-                        style = MaterialTheme.typography.titleLarge,
+                        style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
                         color = MaterialTheme.colorScheme.onBackground
                     )
                 },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.background,
-                    titleContentColor = MaterialTheme.colorScheme.onBackground
+                    titleContentColor = MaterialTheme.colorScheme.primary
                 )
             )
         },
         containerColor = MaterialTheme.colorScheme.background
     ) { paddingValues ->
+        // Adiciona rolagem vertical
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
+                .verticalScroll(rememberScrollState()) // Permite rolagem
                 .padding(16.dp)
         ) {
+            // Imagem
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -55,6 +63,7 @@ fun DetailsScreen(besty: Besty) {
             }
             Spacer(modifier = Modifier.height(8.dp))
 
+            // Card de Informações Gerais
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(16.dp),
@@ -67,35 +76,28 @@ fun DetailsScreen(besty: Besty) {
                         color = MaterialTheme.colorScheme.primary
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(
-                        text = "Elemento: ${besty.elements}",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurface
+
+                    StyledLabelValue(
+                        label = "Elemento(s):\n",
+                        value = besty.elements
                     )
-                    Text(
-                        text = "Apareceu primeiro na temporada(s): ${
-                            besty.firstAppearanceId.joinToString(", ") { id ->
-                                SeasonList.find { it.id == id }?.name ?: "Desconhecida"
-                            }
-                        }",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurface
+                    StyledLabelValue(
+                        label = "Apareceu primeiro na temporada(s):\n",
+                        value = SeasonList.find { it.id == besty.firstAppearanceId.firstOrNull() }?.name ?: "Desconhecida"
                     )
-                    Text(
-                        text = "Outras aparições: ${
-                            if (besty.otherAppearanceIds.isEmpty()) "Nenhuma"
-                            else besty.otherAppearanceIds.joinToString(", ") { id ->
-                                SeasonList.find { it.id == id }?.name ?: "Desconhecida"
-                            }
-                        }",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurface
+                    StyledLabelValue(
+                        label = "Outras aparições:\n",
+                        value = if (besty.otherAppearanceIds.isEmpty()) "Não aparece em outras campanhas."
+                        else besty.otherAppearanceIds.joinToString(", \n") { id ->
+                            SeasonList.find { it.id == id }?.name ?: "Desconhecida"
+                        }
                     )
                 }
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
+            // Card de Descrição
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(16.dp),
@@ -118,3 +120,19 @@ fun DetailsScreen(besty: Besty) {
         }
     }
 }
+
+@Composable
+fun StyledLabelValue(label: String, value: String) {
+    Text(
+        text = buildAnnotatedString {
+            withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
+                append(label)
+            }
+            append(value)
+        },
+        style = MaterialTheme.typography.bodyMedium,
+        color = MaterialTheme.colorScheme.onSurface
+    )
+}
+
+

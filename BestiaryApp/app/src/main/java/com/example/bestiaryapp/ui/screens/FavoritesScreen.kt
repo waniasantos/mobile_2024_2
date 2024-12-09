@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.bestiaryapp.models.Besty
 import com.example.bestiaryapp.ui.components.BestyListItem
@@ -20,12 +21,12 @@ fun FavoritesScreen(
 ) {
     Scaffold(
         topBar = {
-            TopAppBar(
+            CenterAlignedTopAppBar(
                 title = {
                     Text(
                         text = "Favoritos",
-                        style = MaterialTheme.typography.titleLarge
-                    )
+                        style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+                        )
                 }
             )
         }
