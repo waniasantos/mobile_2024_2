@@ -27,6 +27,9 @@ import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 
@@ -57,24 +60,70 @@ fun MainScreen() {
         topBar = {
             TopAppBar(
                 title = { "PostApp" },
-                backgroundColor = MaterialTheme.colorScheme.primary,
+                backgroundColor = MaterialTheme.colorScheme.secondary,
                 contentColor = Color.White
             )
         },
         bottomBar = {
-            BottomNavigation {
-                BottomNavigationItem(
+            NavigationBar(
+                containerColor = MaterialTheme.colorScheme.secondary
+            ) {
+                NavigationBarItem(
                     selected = selectTab == 0,
                     onClick = { selectTab = 0 },
-                    label = { Text(text = "Usuários") },
-                    icon = { Icon(Icons.Default.Person, contentDescription = "Usuarios") }
+                    label = {
+                        Text(
+                            "Usuários",
+                            color = if (selectTab == 0)
+                                MaterialTheme.colorScheme.onPrimary
+                            else
+                                MaterialTheme.colorScheme.onSecondary.copy(alpha = 0.6f)
+                        )
+                    },
+                    icon = {
+                        Icon(
+                            Icons.Default.Person,
+                            contentDescription = "Usuarios",
+                            tint = if (selectTab == 0)
+                                MaterialTheme.colorScheme.onPrimary
+                            else
+                                MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.6f)
+                        )
+                    },
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = MaterialTheme.colorScheme.onPrimary,
+                        unselectedIconColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.6f),
+                        indicatorColor = MaterialTheme.colorScheme.secondary
+                    )
                 )
 
-                BottomNavigationItem(
+                NavigationBarItem(
                     selected = selectTab == 1,
                     onClick = { selectTab = 1 },
-                    label = { Text(text = "Posts") },
-                    icon = { Icon(Icons.Default.List, contentDescription = "Posts") }
+                    label = {
+                        Text(
+                            "Posts",
+                            color = if (selectTab == 1)
+                                MaterialTheme.colorScheme.onPrimary
+                            else
+                                MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.6f)
+                        )
+                    },
+                    icon = {
+                        Icon(
+                            Icons.Default.List,
+                            contentDescription = "Posts",
+                            tint = if (selectTab == 1)
+                                MaterialTheme.colorScheme.onPrimary
+                            else
+                                MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.6f)
+                        )
+                    },
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = MaterialTheme.colorScheme.onPrimary,
+                        unselectedIconColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.6f),
+                        indicatorColor = MaterialTheme.colorScheme.secondary
+                    )
                 )
             }
         }
