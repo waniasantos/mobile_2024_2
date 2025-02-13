@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1025800199302",
+    "project_id": "desmobile-f4d5e",
+    "storage_bucket": "desmobile-f4d5e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025800199302:android:557efeaaf658d0c7fa0507",
+        "android_client_info": {
+          "package_name": "com.example.crud2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFbHoeOB8MILspGyNjWzyskojckhDYfVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
